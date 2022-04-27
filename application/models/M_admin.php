@@ -22,7 +22,7 @@ class M_admin extends CI_Model
         $this->db->where('id_user', $data['id_user']);
         $this->db->update('user', $data);
     }
-    public function FunctionName($data)
+    public function delete($data)
     {
         $this->db->where('id_user', $data['id_user']);
         $this->db->delete('user');
