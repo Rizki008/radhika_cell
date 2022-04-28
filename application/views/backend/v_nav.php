@@ -41,7 +41,7 @@
                     </a>
                 </li>
                 <li class="dropdown">
-                    <a href="<?= base_url('lokasi') ?>" class="dropdown-toggle no-arrow">
+                    <a href="<?= base_url('admin/lokasi') ?>" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-apartment"></span><span class="mtext"> Lokasi </span>
                     </a>
                 </li>
