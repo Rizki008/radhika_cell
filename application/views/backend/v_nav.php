@@ -31,7 +31,7 @@
                         <span class="micon dw dw-invoice"></span><span class="mtext">Master Transaksi</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="<?= base_url('pesanan/pesanan') ?>">Pesanan</a></li>
+                        <li><a href="<?= base_url('pesanan') ?>">Pesanan</a></li>
                         <li><a href="<?= base_url('pesanan/pelanggan') ?>">Histori Pelanggan</a></li>
                     </ul>
                 </li>
