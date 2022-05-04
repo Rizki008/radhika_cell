@@ -71,4 +71,9 @@ class M_home extends CI_Model
         $this->db->where('produk.id_produk', $id_produk);
         return $this->db->get()->row();
     }
+
+    public function reletead_produk($id_produk)
+    {
+        return $this->db->join('diskon', 'produk.id_produk = diskon.id_produk', 'left')->where(array('produk.id_produk' => $id_produk))->limit(6)->get('produk')->result();
+    }
 }
