@@ -28,7 +28,7 @@
                             <li><a href="#"><i class="fa fa-user"></i> <?= $this->session->userdata('username'); ?></a></li>
                         <?php } ?>
 
-                        <li><a href="#"><i class="fa fa-shopping-cart"></i> Cart[<?= $jml_item ?>]</a></li>
+                        <li><a href="<?= base_url('belanja') ?>"><i class="fa fa-shopping-cart"></i> Cart[<?= $jml_item ?>]</a></li>
                         <?php if ($this->session->userdata('email') == "") { ?>
                             <li><a href="<?= base_url('pelanggan/login') ?>"><i class="fa fa-lock"></i> Login</a></li>
                         <?php } else { ?>
