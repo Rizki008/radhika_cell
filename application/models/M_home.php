@@ -10,7 +10,9 @@ class M_home extends CI_Model
         $this->db->from('produk');
         $this->db->join('kategori', 'produk.id_kategori = kategori.id_kategori', 'left');
         $this->db->join('diskon', 'produk.id_produk = diskon.id_produk', 'left');
+        $this->db->where('qty>=1');
         $this->db->order_by('produk.id_produk', 'desc');
+        $this->db->limit(6);
         return $this->db->get()->result();
     }
 
