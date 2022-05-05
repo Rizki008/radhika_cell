@@ -167,6 +167,17 @@ class Masterproduk extends CI_Controller
                     'images' => $upload_data['uploads']['file_name'],
                 );
                 $this->m_masterproduk->add($data);
+
+                //menambahkan data produk ke tabel diskon dengan default 0
+                $id = $this->m_masterproduk->id_produk();
+                $i = $id->id;
+                $diskon = array(
+                    'id_produk' => $i,
+                    'nama_promo' => '0',
+                    'harga_promo' => '0',
+                    'tanggal' => '0'
+                );
+                $this->m_masterproduk->create($diskon);
                 $this->session->set_flashdata('pesan', 'Produk Berhasil Ditambah');
                 redirect('masterproduk/produk');
             }
@@ -250,54 +261,22 @@ class Masterproduk extends CI_Controller
         $this->load->view('backend/v_wrapper', $data, FALSE);
     }
 
-    public function delete($id_produk = null)
+    public function delete($id = null)
     {
-        $produk = $this->m_masterproduk->detail_update($id_produk);
+        $produk = $this->m_masterproduk->detail_delete($id);
         if ($produk->images !== "") {
             unlink('./assets/produk/' . $produk->images);
         }
 
-        $data = array(
-            'id_produk' => $id_produk,
-        );
-        $this->m_masterproduk->delete($data);
+        $this->m_masterproduk->delete($id);
+        $this->m_masterproduk->hapus_promo($id);
         $this->session->set_flashdata('pesan', 'Produk Berhasil Di Delete');
         redirect('masterproduk/produk');
     }
 
-    //promo
-    // public function promo()
-    // {
-    //     $data = array(
-    //         'title' => 'Data Promo',
-    //         'promo' => $this->m_masterproduk->promo(),
-    //         'isi' => 'backend/promo/v_promo'
-    //     );
-    //     $this->load->view('backend/v_wrapper', $data, FALSE);
-    // }
+    // promo
     public function promo()
     {
-        $this->form_validation->set_rules('nama_promo', 'Nama promo', 'required', array('required' => '%s Mohon Untuk Diisi'));
-
-        if ($this->form_validation->run() == FALSE) {
-            $data = array(
-                'title' => 'Promo Produk',
-                'promo' => $this->m_masterproduk->promo(),
-                'produk' => $this->m_masterproduk->produk(),
-                'isi' => 'backend/promo/v_promo'
-            );
-            $this->load->view('backend/v_wrapper', $data, FALSE);
-        } else {
-            $data = array(
-                'id_produk' => $this->input->post('id_produk'),
-                'nama_promo' => $this->input->post('nama_promo'),
-                'harga_promo' => $this->input->post('harga_promo'),
-                'tanggal' => $this->input->post('tanggal'),
-            );
-            $this->m_masterproduk->create($data);
-            $this->session->set_flashdata('pesan', 'Promo berhasil di tambah');
-            redirect('masterproduk/promo');
-        }
         $data = array(
             'title' => 'Promo Produk',
             'promo' => $this->m_masterproduk->promo(),
@@ -306,12 +285,28 @@ class Masterproduk extends CI_Controller
         );
         $this->load->view('backend/v_wrapper', $data, FALSE);
     }
-    public function hapus_promo($id_diskon = null)
+
+    public function update_promo($id_diskon = NULL)
     {
         $data = array(
             'id_diskon' => $id_diskon,
+            'nama_promo' => $this->input->post('nama_promo'),
+            'harga_promo' => $this->input->post('harga_promo'),
+            'tanggal' => $this->input->post('tanggal'),
         );
-        $this->m_masterproduk->hapus_promo($data);
+        $this->m_masterproduk->edit_promo($data);
+        $this->session->set_flashdata('pesan', 'Promo berhasil di tambah');
+        redirect('masterproduk/promo');
+    }
+
+    public function hapus_promo($id)
+    {
+        $data = array(
+            'nama_promo' => '0',
+            'harga_promo' => '0',
+            'tanggal' => '0',
+        );
+        $this->m_masterproduk->update_diskon($id, $data);
         $this->session->set_flashdata('pesan', 'Promo Berhasil Dihapus');
         redirect('masterproduk/promo');
     }

@@ -44,6 +44,11 @@ class M_masterproduk extends CI_Model
         $this->db->order_by('id_produk', 'desc');
         return $this->db->get()->result();
     }
+
+    public function id_produk()
+    {
+        return $this->db->query('SELECT max(id_produk) as id FROM produk')->row();
+    }
     public function add($data)
     {
         $this->db->insert('produk', $data);
@@ -54,6 +59,14 @@ class M_masterproduk extends CI_Model
         $this->db->from('produk');
         $this->db->join('kategori', 'produk.id_kategori = kategori.id_kategori', 'left');
         $this->db->where('id_produk', $id_produk);
+        return $this->db->get()->row();
+    }
+    public function detail_delete($id)
+    {
+        $this->db->select('*');
+        $this->db->from('produk');
+        $this->db->join('kategori', 'produk.id_kategori = kategori.id_kategori', 'left');
+        $this->db->where('id_produk', $id);
         return $this->db->get()->row();
     }
     public function update($data)
@@ -94,9 +107,14 @@ class M_masterproduk extends CI_Model
         $this->db->where('id_diskon', $data['id_diskon']);
         $this->db->update('diskon', $data);
     }
-    public function hapus_promo($data)
+    public function update_diskon($id, $data)
     {
-        $this->db->where('id_diskon', $data['id_diskon']);
+        $this->db->where('id_diskon', $id);
+        $this->db->update('diskon', $data);
+    }
+    public function hapus_promo($id)
+    {
+        $this->db->where('id_diskon', $id);
         $this->db->delete('diskon');
     }
     //end promo
