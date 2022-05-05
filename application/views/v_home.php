@@ -114,7 +114,7 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="<?= base_url('assets/produk/' . $value->images) ?>" alt="" />
-                                            <h2>Rp. <?= number_format($value->harga) ?></h2>
+                                            <h2>Rp. <?= number_format($value->harga - $value->harga_promo, 0) ?></h2>
                                             <p><?= $value->nama_produk ?></p>
                                             <button href="#" class="btn btn-default add-to-cart" type="submit" data-name="<?= $value->nama_produk ?>" data-price="<?= ($value->harga_promo > 0) ? ($value->harga - $value->harga_promo) : $value->harga ?>" data-id="<?= $value->id_produk ?>"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
@@ -163,7 +163,7 @@
                                                 <img src="<?= base_url('assets/produk/' . $value->images) ?>" alt="" />
                                                 <h2>Rp. <?= number_format($value->harga - $value->harga_promo, 0) ?></h2>
                                                 <p><?= $value->nama_produk ?></p>
-                                                <button href="#" class="btn btn-default add-to-cart" type="submit" data-name="<?= $value->nama_produk ?>" data-price="<?= ($value->harga_promo > 0) ? ($value->harga - $value->harga_promo) : $value->harga ?>" data-id="<?= $value->id_produk ?>"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                                <button class="btn btn-default add-to-cart" type="submit" data-name="<?= $value->nama_produk ?>" data-price="<?= ($value->harga_promo > 0) ? ($value->harga - $value->harga_promo) : $value->harga ?>" data-id="<?= $value->id_produk ?>"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                             </div>
                                         </div>
                                     </div>
