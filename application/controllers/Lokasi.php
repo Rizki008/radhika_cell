@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Lokasi extends CI_Controller
 {
 
-    private $api_key = 'f69a40947fab429e1dc561d1a3cfc421';
+    private $api_key = 'e06c544411a683bb9af0d018039f411c';
 
     public function __construct()
     {
@@ -103,6 +103,8 @@ class Lokasi extends CI_Controller
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => "https://api.rajaongkir.com/starter/cost",
+            CURLOPT_SSL_VERIFYHOST => 0,
+            CURLOPT_SSL_VERIFYPEER => 0,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
@@ -112,7 +114,7 @@ class Lokasi extends CI_Controller
             CURLOPT_POSTFIELDS => "origin=" . $id_kota_asal . "&destination=" . $id_kota . "&weight=" . $berat . "&courier=" . $expedisi,
             CURLOPT_HTTPHEADER => array(
                 "content-type: application/x-www-form-urlencoded",
-                "key: $this->api_key;"
+                "key: $this->api_key"
             ),
         ));
 
@@ -125,14 +127,14 @@ class Lokasi extends CI_Controller
             echo "cURL Error #:" . $err;
         } else {
             $array_response = json_decode($response, true);
-            echo '<pre>';
-            print_r($array_response['rajaongkir']['results'][0]['costs']);
-            echo '<pre>';
+            //echo '<pre>';
+            //print_r($array_response['rajaongkir']['results'][0]['costs']);
+            //echo '</pre>';
             $data_paket = $array_response['rajaongkir']['results'][0]['costs'];
-            echo "<option value=''>---Pilih Paket---</option>";
+            echo "<option value=''>--Pilih Paket---</option>";
             foreach ($data_paket as $key => $value) {
-                echo "<option value='" . $value['service'] . "'ongkir='" . $value['cost'][0]['value'] . "'estimasi='" . $value['cost'][0]['etd'] . " Hari'>";
-                echo $value['service'] . "| Rp." . $value['cost'][0]['value'] . "|" . $value['cost'][0]['etd'] . " Hari";
+                echo "<option value='" . $value['service'] . "' ongkir='" . $value['cost'][0]['value'] . "' estimasi='" . $value['cost'][0]['etd'] . " Hari'>";
+                echo $value['service'] . " | Rp." . $value['cost'][0]['value'] . " | " . $value['cost'][0]['etd'] . " Hari";
                 echo "</option>";
             }
         }
