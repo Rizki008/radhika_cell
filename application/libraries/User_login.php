@@ -50,6 +50,6 @@ class User_login
         $this->ci->session->unset_userdata('password');
         $this->ci->session->unset_userdata('level');
         $this->ci->session->set_flashdata('pesan', 'Berhasil Logout');
-        redirect('auth/logout');
+        redirect('auth/user_login');
     }
 }
