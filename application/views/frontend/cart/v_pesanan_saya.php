@@ -98,6 +98,8 @@
                                                         <th>Tanggal Order</th>
                                                         <th>Expedisi</th>
                                                         <th>Biaya Ongkir</th>
+                                                        <th>Total Bayar</th>
+                                                        <th>No Resi</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
@@ -136,6 +138,8 @@
                                                         <th>Tanggal Order</th>
                                                         <th>Expedisi</th>
                                                         <th>Biaya Ongkir</th>
+                                                        <th>Total Bayar</th>
+                                                        <th>No Resi</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
@@ -173,7 +177,8 @@
                                                         <th>Tanggal Order</th>
                                                         <th>Expedisi</th>
                                                         <th>Biaya Ongkir</th>
-                                                        <th>Action</th>
+                                                        <th>Total Bayar</th>
+                                                        <th>No Resi</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -203,3 +208,27 @@
         </div>
     </div>
 </section>
+<?php foreach ($dikirim as $key => $value) { ?>
+    <div class="modal fade" id="diterima<?= $value->id_transaksi ?>">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Pesanan Diterima</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Apakah Anda Yakin Pesanan Sudah Diterima?
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
+                    <a href="<?= base_url('pesanan_saya/diterima/' . $value->id_transaksi) ?>" class="btn btn-primary">Ya</a>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+<?php } ?>
