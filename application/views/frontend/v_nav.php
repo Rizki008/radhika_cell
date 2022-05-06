@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="logo pull-left">
-                    <a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+                    <a href="index.html"><img src="<?= base_url() ?>eshopper/images/home/logo.png" alt="" /></a>
                 </div>
                 <div class="btn-group pull-right">
                     <div class="btn-group">
@@ -26,6 +26,7 @@
                             <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
                         <?php } else { ?>
                             <li><a href="#"><i class="fa fa-user"></i> <?= $this->session->userdata('username'); ?></a></li>
+                            <li><a href="<?= base_url('pesanan_saya') ?>"><i class="fa fa-magnet"></i> Pesanan</a></li>
                         <?php } ?>
 
                         <li><a href="<?= base_url('belanja') ?>"><i class="fa fa-shopping-cart"></i> Cart[<?= $jml_item ?>]</a></li>
