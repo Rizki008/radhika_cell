@@ -3,7 +3,7 @@
         <div class="breadcrumbs">
             <ol class="breadcrumb">
                 <li><a href="#">Home</a></li>
-                <li class="active">Check out</li>
+                <li class="active">Pembayaran</li>
             </ol>
         </div>
         <!--/breadcrums-->
@@ -35,7 +35,7 @@
         <!--/checkout-options-->
 
         <div class="register-req">
-            <p>Please use Register And Checkout to easily get access to your order history, or use Checkout as Guest</p>
+            <p>Silah Upload Bukti Pembayaran Dibawah Ini</p>
         </div>
         <!--/register-req-->
 
@@ -43,7 +43,7 @@
             <div class="row">
                 <div class="col-sm-3">
                     <div class="shopper-info">
-                        <p>Shopper Information</p>
+                        <p>Upload Bukti Bayar</p>
                         <?php
                         echo validation_errors(
                             ' <div class="alert alert-danger alert-dismissible" role="alert">',
@@ -61,9 +61,9 @@
                         <input type="text" name="nama_bank" placeholder="Nama Bank">
                         <input type="number" name="jml_bayar" placeholder="10000">
                         <input type="file" name="bukti_bayar" placeholder="upload">
+                        <a class="btn btn-primary" href="<?= base_url('pesanan') ?>">Kembali</a>
+                        <button type="submit" class="btn btn-primary" href="">Bayar</button>
                         <?php echo form_close() ?>
-                        <a class="btn btn-primary" href="">Get Quotes</a>
-                        <a class="btn btn-primary" href="">Continue</a>
                     </div>
                 </div>
             </div>
