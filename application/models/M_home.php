@@ -55,7 +55,7 @@ class M_home extends CI_Model
     public function best_produk()
     {
         $this->db->select_sum('jml_produk');
-        $this->db->select('produk.images, produk.nama_produk, produk.harga, produk.id_produk');
+        $this->db->select('diskon.harga_promo,produk.images, produk.nama_produk, produk.harga, produk.id_produk');
         $this->db->from('rinci_transaksi');
         $this->db->join('produk', 'rinci_transaksi.id_produk = produk.id_produk', 'left');
         $this->db->join('diskon', 'produk.id_produk = diskon.id_produk', 'left');

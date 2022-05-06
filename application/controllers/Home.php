@@ -27,6 +27,8 @@ class Home extends CI_Controller
         $kategori = $this->m_home->kategori($id_kategori);
         $data = array(
             'title' =>  $kategori->nama_kategori,
+            'best_produk' => $this->m_home->best_produk(),
+            'diskon' => $this->m_home->diskon(),
             'produk' => $this->m_home->produk_all($id_kategori),
             'isi' => 'v_home'
         );
@@ -37,6 +39,7 @@ class Home extends CI_Controller
         $data = array(
             'title' => 'Detail Produk',
             'produk' => $this->m_home->detail_produk($id_produk),
+            'diskon' => $this->m_home->diskon(),
             'reletead_produk' => $this->m_home->reletead_produk($id_produk),
             'isi' => 'frontend/detail/v_produk'
         );
