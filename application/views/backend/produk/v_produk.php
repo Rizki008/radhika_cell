@@ -62,7 +62,7 @@
 									<td><?= $value->nama_kategori ?></td>
 									<td><?= $value->harga ?></td>
 									<td><?= $value->berat ?> </td>
-									<td><?= $value->qty ?></td>
+									<td><?= $value->stock ?></td>
 									<td><?= $value->deskripsi ?></td>
 									<td>
 										<div class="dropdown">

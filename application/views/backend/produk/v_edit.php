@@ -83,7 +83,7 @@
                 <div class="form-group row">
                     <label class="col-sm-12 col-md-2 col-form-label">Quantity Produk</label>
                     <div class="col-sm-12 col-md-10">
-                        <input class="form-control" name="qty" value="<?= $produk->qty ?>" required placeholder="Quantity Produk" type="number">
+                        <input class="form-control" name="stock" value="<?= $produk->stock ?>" required placeholder="Quantity Produk" type="number">
                     </div>
                 </div>
                 <div class="form-group row">
