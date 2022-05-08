@@ -19,7 +19,7 @@ class Belanja extends CI_Controller
             'title' => 'Belanja',
             'isi' => 'frontend/cart/v_belanja'
         );
-        $this->load->view('frontend/v_wrapper', $data, FALSE);
+        $this->load->view('frontend/cart/v_belanja', $data, FALSE);
     }
 
     public function add()
@@ -120,7 +120,7 @@ class Belanja extends CI_Controller
                 $data_rinci = array(
                     'no_order' => $this->input->post('no_order'),
                     'id_produk' => $item['id'],
-                    'jml_produk' => $this->input->post('jml_produk' . $i++),
+                    'qty' => $this->input->post('qty' . $i++),
                 );
 
                 $this->m_transaksi->simpan_rinci_transaksi($data_rinci);
