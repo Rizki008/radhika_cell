@@ -93,4 +93,15 @@ class M_transaksi extends CI_Model
         $this->db->where('transaksi.no_order', $no_order);
         return $this->db->get()->result();
     }
+
+    public function histori()
+    {
+        $this->db->select_sum('qty');
+        $this->db->select('pelanggan.username, pelanggan.no_tlpn');
+        $this->db->from('rinci_transaksi');
+        $this->db->join('transaksi', 'rinci_transaksi.no_order = transaksi.no_order', 'left');
+        $this->db->join('pelanggan', 'transaksi.id_pelanggan = pelanggan.id_pelanggan', 'left');
+        $this->db->group_by('qty');
+        return $this->db->get()->result();
+    }
 }
