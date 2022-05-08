@@ -61,4 +61,14 @@ class Pesanan extends CI_Controller
         );
         $this->load->view('backend/v_wrapper', $data, FALSE);
     }
+
+    public function pelanggan()
+    {
+        $data = array(
+            'title' => 'Data Histori Pemebelain',
+            'histori' => $this->m_transaksi->histori(),
+            'isi' => 'backend/transaksi/v_histori'
+        );
+        $this->load->view('backend/v_wrapper', $data, FALSE);
+    }
 }
