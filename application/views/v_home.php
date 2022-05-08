@@ -182,9 +182,9 @@
                     <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="item active">
-                                <div class="col-sm-4">
-                                    <?php if (count($best_produk) > 0) : ?>
-                                        <?php foreach ($best_produk as $key => $value) { ?>
+                                <?php if (count($best_produk) > 0) : ?>
+                                    <?php foreach ($best_produk as $key => $value) { ?>
+                                        <div class="col-sm-4">
                                             <div class="product-image-wrapper">
                                                 <?php echo form_open('belanja/add');
                                                 echo form_hidden('id', $value->id_produk);
@@ -202,10 +202,10 @@
                                                 </div>
                                                 <?php echo form_close() ?>
                                             </div>
-                                        <?php } ?>
-                                    <?php else : ?>
-                                    <?php endif; ?>
-                                </div>
+                                        </div>
+                                    <?php } ?>
+                                <?php else : ?>
+                                <?php endif; ?>
                             </div>
                         </div>
                         <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
