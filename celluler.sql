@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Apr 2022 pada 05.05
+-- Waktu pembuatan: 08 Bulan Mei 2022 pada 00.38
 -- Versi server: 10.4.20-MariaDB
 -- Versi PHP: 7.4.22
 
@@ -49,6 +49,15 @@ CREATE TABLE `diskon` (
   `tanggal` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `diskon`
+--
+
+INSERT INTO `diskon` (`id_diskon`, `id_produk`, `nama_promo`, `harga_promo`, `tanggal`) VALUES
+(1, 1, '0', '0', '0'),
+(3, 3, '0', '0', '0'),
+(4, 4, '0', '0', '0');
+
 -- --------------------------------------------------------
 
 --
@@ -66,10 +75,9 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`, `gambar`) VALUES
-(4, 'samsung', 'p5.jpg'),
-(5, 'xiamo', 'p1.jpg'),
-(6, 'oppo', 'p6.jpg'),
-(8, 'iphon', 'feature-bg.jpg');
+(1, 'vivo', 'photo1.jpg'),
+(2, 'xiamo', 'photo2.jpg'),
+(3, 'nokia', 'photo3.jpg');
 
 -- --------------------------------------------------------
 
@@ -80,9 +88,16 @@ INSERT INTO `kategori` (`id_kategori`, `nama_kategori`, `gambar`) VALUES
 CREATE TABLE `lokasi` (
   `id` int(11) NOT NULL,
   `nama_toko` varchar(125) DEFAULT NULL,
-  `lokasi` int(11) DEFAULT NULL,
+  `lokasi` int(125) DEFAULT NULL,
   `alamat` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `lokasi`
+--
+
+INSERT INTO `lokasi` (`id`, `nama_toko`, `lokasi`, `alamat`) VALUES
+(1, 'radhika celluler', 211, 'kadugede kuningan');
 
 -- --------------------------------------------------------
 
@@ -99,6 +114,13 @@ CREATE TABLE `pelanggan` (
   `jenis_kel` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `pelanggan`
+--
+
+INSERT INTO `pelanggan` (`id_pelanggan`, `username`, `email`, `password`, `no_tlpn`, `jenis_kel`) VALUES
+(1, 'silva', 'silva@gmail.com', '12345', '085156727368', 'perempuan');
+
 -- --------------------------------------------------------
 
 --
@@ -111,7 +133,7 @@ CREATE TABLE `produk` (
   `id_kategori` int(11) DEFAULT NULL,
   `harga` varchar(50) DEFAULT NULL,
   `berat` varchar(50) DEFAULT NULL,
-  `qty` varchar(50) DEFAULT NULL,
+  `stock` varchar(50) DEFAULT NULL,
   `images` text DEFAULT NULL,
   `deskripsi` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -120,10 +142,31 @@ CREATE TABLE `produk` (
 -- Dumping data untuk tabel `produk`
 --
 
-INSERT INTO `produk` (`id_produk`, `nama_produk`, `id_kategori`, `harga`, `berat`, `qty`, `images`, `deskripsi`) VALUES
-(2, 'samsung s22', 4, '12000000', '20', '5', 'abt1.jpg', 'samsung\r\n'),
-(4, 'iphon 12', 8, '350000', '250', '7', 'abt2.jpg', 'sdasadas'),
-(5, 'xiami m3', 5, '8000000', '90', '3', 'hero-bg-21.jpg', 'dasdas');
+INSERT INTO `produk` (`id_produk`, `nama_produk`, `id_kategori`, `harga`, `berat`, `stock`, `images`, `deskripsi`) VALUES
+(1, 'xiamo m3', 2, '8000000', '200', '7', 'product07.png', 'sdasdas'),
+(3, 'iphon 12', 3, '350000', '250', '3', 'shop03.png', 'fdfdsa'),
+(4, 'samsung s22', 3, '22700', '20', '2', 'shop01.png', 'gfstrerreds');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `rekening`
+--
+
+CREATE TABLE `rekening` (
+  `id_rekening` int(11) NOT NULL,
+  `nama_bank` varchar(25) DEFAULT NULL,
+  `no_rek` varchar(50) DEFAULT NULL,
+  `atas_nama` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `rekening`
+--
+
+INSERT INTO `rekening` (`id_rekening`, `nama_bank`, `no_rek`, `atas_nama`) VALUES
+(1, 'BRI', '32412356453', 'silva'),
+(2, 'BNI', '54235653232', 'tiara');
 
 -- --------------------------------------------------------
 
@@ -137,6 +180,16 @@ CREATE TABLE `rinci_transaksi` (
   `id_produk` int(11) DEFAULT NULL,
   `qty` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `rinci_transaksi`
+--
+
+INSERT INTO `rinci_transaksi` (`id_rinci`, `no_order`, `id_produk`, `qty`) VALUES
+(1, '20220506WJUITUVL', 3, 1),
+(2, '20220507FHP2BZZD', 4, 1),
+(3, '20220507FHP2BZZD', 3, 1),
+(4, '20220507FHP2BZZD', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -159,17 +212,27 @@ CREATE TABLE `transaksi` (
   `paket` varchar(255) DEFAULT NULL,
   `ongkir` int(11) DEFAULT NULL,
   `estimasi` varchar(255) DEFAULT NULL,
+  `no_resi` varchar(125) DEFAULT NULL,
   `berat` bigint(255) DEFAULT NULL,
   `grand_total` int(11) DEFAULT NULL,
   `total_bayar` int(11) DEFAULT NULL,
   `status_order` int(11) DEFAULT NULL,
   `status_bayar` int(11) DEFAULT NULL,
   `atas_nama` varchar(50) DEFAULT NULL,
+  `nama_bank` varchar(125) DEFAULT NULL,
   `bukti_bayar` text DEFAULT NULL,
   `no_rek` varchar(50) DEFAULT NULL,
   `jml_bayar` varchar(50) DEFAULT NULL,
   `catatan` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `transaksi`
+--
+
+INSERT INTO `transaksi` (`id_transaksi`, `id_pelanggan`, `no_order`, `tgl_order`, `nama_pelanggan`, `no_tlpn`, `provinsi`, `kota`, `alamat`, `kode_pos`, `expedisi`, `paket`, `ongkir`, `estimasi`, `no_resi`, `berat`, `grand_total`, `total_bayar`, `status_order`, `status_bayar`, `atas_nama`, `nama_bank`, `bukti_bayar`, `no_rek`, `jml_bayar`, `catatan`) VALUES
+(1, 1, '20220506WJUITUVL', '2022-05-06', 'uud', '0912838291221', 'Banten', 'Serang', 'Ciawilor', '45591', 'tiki', 'ECO', 11000, '4 Hari', 'jne12345', 750, 1050000, 1061000, 3, 1, 'wulan', 'bni', 'signup-bg1.jpg', '123456789', '123444', NULL),
+(2, 1, '20220507FHP2BZZD', '2022-05-07', 'uud', '123412341234', 'Bangka Belitung', 'Bangka', 'Ciawilor', '45591', 'tiki', 'ECO', 35000, '4 Hari', NULL, 470, 8372700, 8407700, 0, 1, 'sasa', 'bca', 'signup-bg2.jpg', NULL, '123444', NULL);
 
 -- --------------------------------------------------------
 
@@ -183,6 +246,14 @@ CREATE TABLE `user` (
   `password` varchar(125) DEFAULT NULL,
   `level` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `user`
+--
+
+INSERT INTO `user` (`id_user`, `username`, `password`, `level`) VALUES
+(1, 'admin', 'admin', 1),
+(2, 'pemilik', 'pemilik', 2);
 
 --
 -- Indexes for dumped tables
@@ -225,6 +296,12 @@ ALTER TABLE `produk`
   ADD PRIMARY KEY (`id_produk`);
 
 --
+-- Indeks untuk tabel `rekening`
+--
+ALTER TABLE `rekening`
+  ADD PRIMARY KEY (`id_rekening`);
+
+--
 -- Indeks untuk tabel `rinci_transaksi`
 --
 ALTER TABLE `rinci_transaksi`
@@ -256,49 +333,55 @@ ALTER TABLE `chatting`
 -- AUTO_INCREMENT untuk tabel `diskon`
 --
 ALTER TABLE `diskon`
-  MODIFY `id_diskon` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_diskon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `lokasi`
 --
 ALTER TABLE `lokasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT untuk tabel `rekening`
+--
+ALTER TABLE `rekening`
+  MODIFY `id_rekening` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `rinci_transaksi`
 --
 ALTER TABLE `rinci_transaksi`
-  MODIFY `id_rinci` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_rinci` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
