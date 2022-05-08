@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Bulan Mei 2022 pada 00.38
+-- Waktu pembuatan: 08 Bulan Mei 2022 pada 17.47
 -- Versi server: 10.4.20-MariaDB
 -- Versi PHP: 7.4.22
 
@@ -35,6 +35,18 @@ CREATE TABLE `chatting` (
   `time_chatting` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `chatting`
+--
+
+INSERT INTO `chatting` (`id_chatting`, `id_pelanggan`, `pesan`, `balas`, `time_chatting`) VALUES
+(1, 1, 'hai', NULL, '2022-05-08 14:52:16'),
+(2, 1, '0', 'hai juga', '2022-05-08 14:58:17'),
+(3, 1, '0', 'ada yang bisa di bantu?', '2022-05-08 14:59:06'),
+(4, 1, '0', 'kami siap membantu anda', '2022-05-08 14:59:31'),
+(5, 1, '0', 'jadi bagai mana?', '2022-05-08 15:00:09'),
+(6, 1, 'bisa di bantu ka?', '0', '2022-05-08 15:41:26');
+
 -- --------------------------------------------------------
 
 --
@@ -55,7 +67,7 @@ CREATE TABLE `diskon` (
 
 INSERT INTO `diskon` (`id_diskon`, `id_produk`, `nama_promo`, `harga_promo`, `tanggal`) VALUES
 (1, 1, '0', '0', '0'),
-(3, 3, '0', '0', '0'),
+(3, 3, 'lebara', '123123', '2022-05-10'),
 (4, 4, '0', '0', '0');
 
 -- --------------------------------------------------------
@@ -327,13 +339,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `chatting`
 --
 ALTER TABLE `chatting`
-  MODIFY `id_chatting` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_chatting` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `diskon`
 --
 ALTER TABLE `diskon`
-  MODIFY `id_diskon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_diskon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori`
@@ -357,7 +369,7 @@ ALTER TABLE `pelanggan`
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `rekening`
