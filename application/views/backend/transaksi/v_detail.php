@@ -29,31 +29,34 @@
                         </div>
                     </div>
                     <h4 class="text-center mb-30 weight-600">INVOICE</h4>
-                    <?php
-                    foreach ($pesanan_detail as $key => $value) { ?>
-                        <div class="row pb-30">
-                            <div class="col-md-6">
-                                <h5 class="mb-15">Client Name</h5>
-                                <p class="font-14 mb-5">Date Issued: <strong class="weight-600"><?= $value->tgl_order ?></strong></p>
-                                <p class="font-14 mb-5">Invoice No: <strong class="weight-600"><?= $value->no_order ?></strong></p>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="text-right">
-                                    <p class="font-14 mb-5"><?= $value->nama_pelanggan ?> </strong></p>
-                                    <p class="font-14 mb-5"><?= $value->kota ?></p>
-                                    <p class="font-14 mb-5"><?= $value->alamat ?></p>
-                                    <p class="font-14 mb-5"><?= $value->kode_pos ?></p>
-                                </div>
+                    <div class="row pb-30">
+                        <div class="col-md-6">
+                            <?php
+                            foreach ($pesanan_detail as $key => $value) { ?>
+                            <?php } ?>
+                            <h5 class="mb-15">Client Name</h5>
+                            <p class="font-14 mb-5">Date Issued: <strong class="weight-600"><?= $value->tgl_order ?></strong></p>
+                            <p class="font-14 mb-5">Invoice No: <strong class="weight-600"><?= $value->no_order ?></strong></p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-right">
+                                <p class="font-14 mb-5"><?= $value->nama_pelanggan ?> </strong></p>
+                                <p class="font-14 mb-5"><?= $value->kota ?></p>
+                                <p class="font-14 mb-5"><?= $value->alamat ?></p>
+                                <p class="font-14 mb-5"><?= $value->kode_pos ?></p>
                             </div>
                         </div>
-                        <div class="invoice-desc pb-30">
-                            <div class="invoice-desc-head clearfix">
-                                <div class="invoice-sub">Nama Produk</div>
-                                <div class="invoice-rate">Harga Satuan</div>
-                                <div class="invoice-hours">Qty</div>
-                                <div class="invoice-subtotal">Subtotal</div>
-                            </div>
-                            <div class="invoice-desc-body">
+                    </div>
+                    <div class="invoice-desc pb-30">
+                        <div class="invoice-desc-head clearfix">
+                            <div class="invoice-sub">Nama Produk</div>
+                            <div class="invoice-rate">Harga Satuan</div>
+                            <div class="invoice-hours">Qty</div>
+                            <div class="invoice-subtotal">Subtotal</div>
+                        </div>
+                        <div class="invoice-desc-body">
+                            <?php
+                            foreach ($pesanan_detail as $key => $value) { ?>
                                 <ul>
                                     <li class="clearfix">
                                         <div class="invoice-sub"><?= $value->nama_produk ?></div>
@@ -62,8 +65,8 @@
                                         <div class="invoice-subtotal"><span class="weight-600">Rp. <?= number_format($value->qty * $value->harga, 0) ?></span></div>
                                     </li>
                                 </ul>
-                            </div>
-                        <?php } ?>
+                            <?php } ?>
+                        </div>
                         <div class="invoice-desc-footer">
                             <div class="invoice-desc-head clearfix">
                                 <div class="invoice-sub">Bank Info</div>
@@ -86,8 +89,8 @@
                                 </div>
                             <?php } ?>
                         </div>
-                        </div>
-                        <h4 class="text-center pb-20">Thank You!!</h4>
+                    </div>
+                    <h4 class="text-center pb-20">Thank You!!</h4>
                 </div>
             </div>
         </div>
