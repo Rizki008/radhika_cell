@@ -53,7 +53,7 @@
                             <span>
                                 <span>Harga Asli : Rp. <?= number_format($produk->harga - $produk->harga_promo, 0) ?></span>
                                 <label>Quantity:</label>
-                                <input type="number" id="quantity" name="qty" value="1" min="1" max="<?= $produk->qty ?>" />
+                                <input type="number" id="quantity" name="stock" value="1" min="1" max="<?= $produk->stock ?>" />
                                 <button type="submit" class="btn btn-fefault cart" data-name="<?= $produk->nama_produk ?>" data-price="<?= ($produk->harga_promo > 0) ? ($produk->harga - $produk->harga_promo) : $produk->harga ?>" data-id="<?= $produk->id_produk ?>">
                                     <i class="fa fa-shopping-cart"></i>
                                     Add to cart
