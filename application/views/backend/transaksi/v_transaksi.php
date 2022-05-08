@@ -26,16 +26,16 @@
                                 <div class="col-md-3 col-sm-12">
                                     <ul class="nav flex-column nav-pills vtabs" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#home7" role="tab" aria-selected="true"><i class="fa fa-shopping-bag"></i></a>
+                                            <a class="nav-link active" data-toggle="tab" href="#home7" role="tab" aria-selected="true"><i class="fa fa-shopping-bag"></i> Pesanan Masuk</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#profile7" role="tab" aria-selected="false"><i class="icon-copy fa fa-hourglass-2" aria-hidden="true"></i></a>
+                                            <a class="nav-link" data-toggle="tab" href="#profile7" role="tab" aria-selected="false"><i class="icon-copy fa fa-hourglass-2" aria-hidden="true"></i> Proses</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#contact7" role="tab" aria-selected="false"><i class="icon-copy fa fa-paper-plane" aria-hidden="true"></i></a>
+                                            <a class="nav-link" data-toggle="tab" href="#contact7" role="tab" aria-selected="false"><i class="icon-copy fa fa-paper-plane" aria-hidden="true"></i> Kirim</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#send7" role="tab" aria-selected="false"><i class="icon-copy fa fa-tasks" aria-hidden="true"></i></a>
+                                            <a class="nav-link" data-toggle="tab" href="#send7" role="tab" aria-selected="false"><i class="icon-copy fa fa-tasks" aria-hidden="true"></i> Selesai</a>
                                         </li>
                                     </ul>
                                 </div>
