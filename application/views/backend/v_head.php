@@ -4,7 +4,7 @@
 <head>
     <!-- Basic Page Info -->
     <meta charset="utf-8">
-    <title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
+    <title><?= $title ?></title>
 
     <!-- Site favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url() ?>deskapp-master/vendors/images/apple-touch-icon.png">
