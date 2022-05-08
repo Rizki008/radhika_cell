@@ -10,6 +10,7 @@ class Lokasi extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_lokasi');
+        $this->load->model('m_chatting');
     }
     public function provinsi()
     {

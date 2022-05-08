@@ -56,7 +56,10 @@
             </div>
         </div>
         <!--/header_top-->
-
+        <?php
+        $jml_chatting = $this->m_chatting->jml_chatting();
+        $daftar_chat = $this->m_chatting->daftar_chat();
+        ?>
         <div class="header-middle">
             <!--header-middle-->
             <div class="container">
@@ -85,6 +88,8 @@
                                     <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
                                 <?php } else { ?>
                                     <li><a href="#"><i class="fa fa-user"></i> <?= $this->session->userdata('username'); ?></a></li>
+                                    <li><a href="<?= base_url('pesanan_saya') ?>"><i class="fa fa-magnet"></i> Pesanan</a></li>
+                                    <li><a href="<?= base_url('chating/pesan_pelanggan') ?>"><i class="fa fa-magnet"></i> Chatting [<?= $jml_chatting ?>]</a></li>
                                 <?php } ?>
 
                                 <li><a href="<?= base_url('belanja') ?>"><i class="fa fa-shopping-cart"></i> Cart[<?= $jml_item ?>]</a></li>

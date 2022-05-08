@@ -11,7 +11,7 @@ class Laporan extends CI_Controller
         $this->load->model('m_laporan');
         // $this->load->model('m_admin');
         // $this->load->model('m_dashboard');
-        // $this->load->model('m_chatting');
+        $this->load->model('m_chatting');
     }
 
     public function index()

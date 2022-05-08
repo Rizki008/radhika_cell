@@ -11,7 +11,10 @@
             </div>
         </div>
     </div> -->
-
+    <?php
+    $jml_chatting = $this->m_chatting->jml_chatting();
+    $daftar_chat = $this->m_chatting->daftar_chat();
+    ?>
     <div class="header">
         <div class="header-left">
             <div class="menu-icon dw dw-menu"></div>
@@ -31,48 +34,19 @@
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="notification-list mx-h-350 customscroll">
                             <ul>
-                                <li>
-                                    <a href="#">
-                                        <img src="<?= base_url() ?>deskapp-master/vendors/images/img.jpg" alt="">
-                                        <h3>John Doe</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="<?= base_url() ?>deskapp-master/vendors/images/photo1.jpg" alt="">
-                                        <h3>Lea R. Frith</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="<?= base_url() ?>deskapp-master/vendors/images/photo2.jpg" alt="">
-                                        <h3>Erik L. Richards</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="<?= base_url() ?>deskapp-master/vendors/images/photo3.jpg" alt="">
-                                        <h3>John Doe</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="<?= base_url() ?>deskapp-master/vendors/images/photo4.jpg" alt="">
-                                        <h3>Renee I. Hansen</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="<?= base_url() ?>deskapp-master/vendors/images/img.jpg" alt="">
-                                        <h3>Vicki M. Coleman</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-                                    </a>
-                                </li>
+                                <?php
+                                foreach ($daftar_chat as $key => $value) {
+                                ?>
+                                    <li>
+                                        <a href="<?= base_url('chating/pesan/' . $value->id_pelanggan) ?>">
+                                            <img src="<?= base_url() ?>deskapp-master/vendors/images/img.jpg" alt="">
+                                            <h3><?= $value->username ?></h3>
+                                            <p><?= $value->pesan ?></p>
+                                        </a>
+                                    </li>
+                                <?php
+                                }
+                                ?>
                             </ul>
                         </div>
                     </div>

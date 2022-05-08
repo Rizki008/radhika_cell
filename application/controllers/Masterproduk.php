@@ -9,6 +9,7 @@ class Masterproduk extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_masterproduk');
+        $this->load->model('m_chatting');
     }
 
     public function kategori()

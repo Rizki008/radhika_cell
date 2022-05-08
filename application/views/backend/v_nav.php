@@ -35,11 +35,6 @@
                         <li><a href="<?= base_url('pesanan/pelanggan') ?>">Histori Pelanggan</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="<?= base_url('chating') ?>" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-chat3"></span><span class="mtext">Chatting</span>
-                    </a>
-                </li>
                 <li class="dropdown">
                     <a href="<?= base_url('admin/lokasi') ?>" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-apartment"></span><span class="mtext"> Lokasi </span>
