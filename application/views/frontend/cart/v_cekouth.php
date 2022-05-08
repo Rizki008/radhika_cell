@@ -217,17 +217,17 @@
                                 $berat = $items['qty'] * $produk->berat;
                                 $total_berat =  $total_berat + $berat;
                             ?>
-                                <div class="total_area">
-                                    <ul>
-                                        <li>Cart Sub Total <span>Rp. <?= number_format($this->cart->total(), 0) ?></span></li>
-                                        <li>Total Berat <span><?= $berat ?> GR Gr</span></li>
-                                        <li>Quantity <span><?php echo $items['qty'] ?></span></li>
-                                        <li>Ongkir <span id="ongkir"></span></li>
-                                        <li>Total <span class="order-total" id="total_bayar"></span></li>
-                                    </ul>
-                                </div>
                                 <?php $i++; ?>
                             <?php } ?>
+                            <div class="total_area">
+                                <ul>
+                                    <li>Cart Sub Total <span>Rp. <?= number_format($this->cart->total(), 0) ?></span></li>
+                                    <li>Total Berat <span><?= $berat ?> GR Gr</span></li>
+                                    <li>Quantity <span><?php echo $items['qty'] ?></span></li>
+                                    <li>Ongkir <span id="ongkir"></span></li>
+                                    <li>Total <span class="order-total" id="total_bayar"></span></li>
+                                </ul>
+                            </div>
                             <input name="no_order" value="<?= $no_order ?>" hidden>
                             <input name="estimasi" hidden>
                             <input name="ongkir" hidden>
