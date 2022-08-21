@@ -1,5 +1,5 @@
 <div class="footer-wrap pd-20 mb-20 card-box">
-    DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit Hingarajiya</a>
+    By <a href="https://github.com/dropways" target="_blank">Radhika Celluler</a>
 </div>
 </div>
 </div>
@@ -23,7 +23,7 @@
 <script src="<?= base_url() ?>deskapp-master/src/plugins/datatables/js/pdfmake.min.js"></script>
 <script src="<?= base_url() ?>deskapp-master/src/plugins/datatables/js/vfs_fonts.js"></script>
 <!-- Datatable Setting js -->
-<script src="<?= base_url() ?>deskapp-master/vendors/scripts/datatable-setting.js"></script>
+<!-- <script src="<?= base_url() ?>deskapp-master/vendors/scripts/datatable-setting.js"></script> -->
 </body>
 
 <script>

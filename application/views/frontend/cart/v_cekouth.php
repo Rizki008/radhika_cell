@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | E-Shopper</title>
+    <title>Home | Radhika Celluler</title>
     <link href="<?= base_url() ?>eshopper/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?= base_url() ?>eshopper/css/font-awesome.min.css" rel="stylesheet">
     <link href="<?= base_url() ?>eshopper/css/prettyPhoto.css" rel="stylesheet">
@@ -36,13 +36,13 @@
                     <div class="col-sm-6">
                         <div class="contactinfo">
                             <ul class="nav nav-pills">
-                                <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-                                <li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i> +62 876 2635 1625 31</a></li>
+                                <li><a href="#"><i class="fa fa-envelope"></i> radhika_celluler@domain.com</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <div class="social-icons pull-right">
+                        <!-- <div class="social-icons pull-right">
                             <ul class="nav navbar-nav">
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -50,7 +50,7 @@
                                 <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                                 <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <a href="index.html"><img src="<?= base_url() ?>eshopper/images/home/logo.png" alt="" /></a>
+                            <a href="index.html"><img src="<?= base_url() ?>eshopper/images/home/logosa.png" alt="" /></a>
                         </div>
                         <div class="btn-group pull-right">
                             <div class="btn-group">
@@ -122,7 +122,7 @@
                         <div class="mainmenu pull-left">
                             <ul class="nav navbar-nav collapse navbar-collapse">
                                 <li><a href="<?= base_url() ?>" class="active">Home</a></li>
-                                <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+                                <!-- <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.html">Products</a></li>
                                         <li><a href="product-details.html">Product Details</a></li>
@@ -138,13 +138,13 @@
                                     </ul>
                                 </li>
                                 <li><a href="404.html">404</a></li>
-                                <li><a href="contact-us.html">Contact</a></li>
+                                <li><a href="contact-us.html">Contact</a></li> -->
                             </ul>
                         </div>
                     </div>
                     <div class="col-sm-3">
                         <div class="search_box pull-right">
-                            <input type="text" placeholder="Search" />
+                            <!-- <input type="text" placeholder="Search" /> -->
                         </div>
                     </div>
                 </div>
@@ -327,12 +327,12 @@
                 <div class="row">
                     <div class="col-sm-2">
                         <div class="companyinfo">
-                            <h2><span>e</span>-shopper</h2>
+                            <h2><span>Radhika</span>-Celluler</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
                         </div>
                     </div>
                     <div class="col-sm-7">
-                        <div class="col-sm-3">
+                        <!-- <div class="col-sm-3">
                             <div class="video-gallery text-center">
                                 <a href="#">
                                     <div class="iframe-img">
@@ -390,12 +390,12 @@
                                 <p>Circle of Hands</p>
                                 <h2>24 DEC 2014</h2>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="col-sm-3">
                         <div class="address">
                             <img src="<?= base_url() ?>eshopper/images/home/map.png" alt="" />
-                            <p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
+                            <!-- <p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p> -->
                         </div>
                     </div>
                 </div>
@@ -403,7 +403,7 @@
         </div>
 
         <div class="footer-widget">
-            <div class="container">
+            <!-- <div class="container">
                 <div class="row">
                     <div class="col-sm-2">
                         <div class="single-widget">
@@ -465,14 +465,14 @@
                     </div>
 
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
-                    <p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
-                    <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+                    <p class="pull-left">Copyright © 2021 Radhika Celluler Inc. All rights reserved.</p>
+                    <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Radhika Celluler</a></span></p>
                 </div>
             </div>
         </div>

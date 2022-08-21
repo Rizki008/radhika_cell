@@ -39,12 +39,12 @@
 
                     </div>
                     <div class="col-sm-7">
+                        <?php echo form_open('belanja/add');
+                        echo form_hidden('id', $produk->id_produk);
+                        echo form_hidden('price', $produk->harga - $produk->harga_promo);
+                        echo form_hidden('name', $produk->nama_produk);
+                        echo form_hidden('redirect_page', str_replace('index.php/', '', current_url())); ?>
                         <div class="product-information">
-                            <?php echo form_open('belanja/add');
-                            echo form_hidden('id', $produk->id_produk);
-                            echo form_hidden('price', $produk->harga - $produk->harga_promo);
-                            echo form_hidden('name', $produk->nama_produk);
-                            echo form_hidden('redirect_page', str_replace('index.php/', '', current_url())); ?>
                             <!--/product-information-->
                             <!-- <img src="<?= base_url('assets/produk/' . $produk->images) ?>" class="newarrival" alt="" /> -->
                             <h2><?= $produk->nama_produk ?></h2>
