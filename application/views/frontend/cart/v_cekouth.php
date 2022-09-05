@@ -189,7 +189,7 @@
                             <p>Shopper Information</p>
                             <!-- <form> -->
                             <input type="text" name="nama_pelanggan" placeholder="Nama Penerima" class="form-control"><br>
-                            <input type="number" name="no_tlpn" placeholder="No Telphone" class="form-control"><br>
+                            <input type="text" name="no_tlpn" placeholder="No Telphone" class="form-control"><br>
                             <input type="text" name="kode_pos" placeholder="Kode Post" class="form-control"><br>
                             <input type="text" name="alamat" placeholder="Alamat lengkap" class="form-control">
                             <!-- </form> -->
