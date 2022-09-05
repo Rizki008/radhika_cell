@@ -35,4 +35,6 @@
 
         gtag('config', 'UA-119386393-1');
     </script>
+    <script src="<?= base_url() ?>deskapp-master/chart/dist/Chart.min.js"></script>
+    <script src="<?= base_url() ?>deskapp-master/chart/samples/utils.js"></script>
 </head>

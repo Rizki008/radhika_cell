@@ -23,6 +23,8 @@
 <script src="<?= base_url() ?>deskapp-master/src/plugins/datatables/js/pdfmake.min.js"></script>
 <script src="<?= base_url() ?>deskapp-master/src/plugins/datatables/js/vfs_fonts.js"></script>
 <!-- Datatable Setting js -->
+<script src="<?= base_url() ?>deskapp-master/chart/dist/Chart.min.js"></script>
+<script src="<?= base_url() ?>deskapp-master/chart/samples/utils.js"></script>
 <!-- <script src="<?= base_url() ?>deskapp-master/vendors/scripts/datatable-setting.js"></script> -->
 </body>
 
