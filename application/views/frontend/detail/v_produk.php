@@ -40,10 +40,14 @@
                     </div>
                     <div class="col-sm-7">
                         <?php echo form_open('belanja/add');
-                        echo form_hidden('id', $produk->id_produk);
-                        echo form_hidden('price', $produk->harga - $produk->harga_promo);
-                        echo form_hidden('name', $produk->nama_produk);
+                        // echo form_hidden('id', $produk->id_produk);
+                        // echo form_hidden('price', $produk->harga - $produk->harga_promo);
+                        // echo form_hidden('name', $produk->nama_produk);
                         echo form_hidden('redirect_page', str_replace('index.php/', '', current_url())); ?>
+                        <input type="hidden" name="id" value="<?= $produk->id_produk ?>">
+                        <input type="hidden" class="price" name="price" value="<?= $produk->harga - $produk->harga_promo ?>">
+                        <input type="hidden" name="name" value="<?= $produk->nama_produk ?>">
+                        <input type="hidden" name="qty" value="1">
                         <div class="product-information">
                             <!--/product-information-->
                             <!-- <img src="<?= base_url('assets/produk/' . $produk->images) ?>" class="newarrival" alt="" /> -->
@@ -54,7 +58,11 @@
                                 <span>Harga Asli : Rp. <?= number_format($produk->harga - $produk->harga_promo, 0) ?></span>
                                 <label>Quantity:</label>
                                 <input type="number" id="quantity" name="stock" value="1" min="1" max="<?= $produk->stock ?>" />
-                                <button type="submit" class="btn btn-fefault cart" data-name="<?= $produk->nama_produk ?>" data-price="<?= ($produk->harga_promo > 0) ? ($produk->harga - $produk->harga_promo) : $produk->harga ?>" data-id="<?= $produk->id_produk ?>">
+                                <!-- <button type="submit" class="btn btn-fefault cart" data-name="<?= $produk->nama_produk ?>" data-price="<?= ($produk->harga_promo > 0) ? ($produk->harga - $produk->harga_promo) : $produk->harga ?>" data-id="<?= $produk->id_produk ?>">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    Add to cart
+                                </button> -->
+                                <button href="#" class="btn btn-default add-to-cart" type="submit" data-name="<?= $produk->nama_produk ?>" data-price="<?= ($produk->harga_promo > 0) ? ($produk->harga - $produk->harga_promo) : $produk->harga ?>" data-id="<?= $produk->id_produk ?>">
                                     <i class="fa fa-shopping-cart"></i>
                                     Add to cart
                                 </button>
@@ -74,19 +82,49 @@
                     <!--category-tab-->
                     <div class="col-sm-12">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="#reviews" data-toggle="tab">Detail</a></li>
+                            <li><a href="#details" data-toggle="tab">Details</a></li>
+                            <li class="active"><a href="#reviews" data-toggle="tab">Reviews (5)</a></li>
                         </ul>
                     </div>
                     <div class="tab-content">
+                        <div class="tab-pane fade" id="details">
+                            <div class="col-sm-3">
+                                <div class="col-sm-12">
+                                    <p><?= $produk->deskripsi ?></p>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="tab-pane fade active in" id="reviews">
-                            <div class="col-sm-12">
-                                <p><?= $produk->deskripsi ?></p>
-                            </div>
+                            <?php foreach ($reviews as $key => $value) { ?>
+                                <div class="col-sm-12">
+                                    <ul>
+                                        <li><a href=""><i class="fa fa-user"></i><?= $value->username ?></a></li>
+                                        <li><a href=""><i class="fa fa-clock-o"></i>12:41 PM</a></li>
+                                        <li><a href=""><i class="fa fa-calendar-o"></i><?= $value->tanggal ?></a></li>
+                                    </ul>
+                                    <p><?= $value->isi ?></p>
+                                    <!-- <p><b>Write Your Review</b></p>
+
+                                    <form action="#">
+                                        <span>
+                                            <input type="text" placeholder="Your Name" />
+                                            <input type="email" placeholder="Email Address" />
+                                        </span>
+                                        <textarea name=""></textarea>
+                                        <b>Rating: </b> <img src="images/product-details/rating.png" alt="" />
+                                        <button type="button" class="btn btn-default pull-right">
+                                            Submit
+                                        </button>
+                                    </form> -->
+                                </div>
+                            <?php } ?>
                         </div>
 
                     </div>
                 </div>
+                <!--/category-tab-->
+
                 <!--/category-tab-->
 
                 <div class="recommended_items">

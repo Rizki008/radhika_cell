@@ -179,6 +179,7 @@
                                                         <th>Biaya Ongkir</th>
                                                         <th>Total Bayar</th>
                                                         <th>No Resi</th>
+                                                        <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -192,7 +193,7 @@
                                                                 <label class="badge badge-success">Selesai</label>
                                                             </td>
                                                             <td class="text-info"><?= $value->no_resi ?></td>
-                                                            <td></td>
+                                                            <td><a href="<?= base_url('pesanan_saya/detail_selesai/' . $value->no_order) ?>" class="btn btn-success">Kritik Dan Saran</a></td>
                                                         </tr>
                                                     <?php } ?>
                                                 </tbody>

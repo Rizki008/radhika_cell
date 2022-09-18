@@ -78,4 +78,14 @@ class M_home extends CI_Model
     {
         return $this->db->join('diskon', 'produk.id_produk = diskon.id_produk', 'left')->where(array('produk.id_produk' => $id_produk))->limit(6)->get('produk')->result();
     }
+
+    public function reviews($id_produk)
+    {
+        $this->db->select('*');
+        $this->db->from('riview');
+        $this->db->join('pelanggan', 'riview.id_pelanggan = pelanggan.id_pelanggan', 'left');
+
+        $this->db->where('id_produk', $id_produk);
+        return $this->db->get()->result();
+    }
 }

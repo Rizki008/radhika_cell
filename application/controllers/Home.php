@@ -42,6 +42,7 @@ class Home extends CI_Controller
             'produk' => $this->m_home->detail_produk($id_produk),
             'diskon' => $this->m_home->diskon(),
             'reletead_produk' => $this->m_home->reletead_produk($id_produk),
+            'reviews' => $this->m_home->reviews($id_produk),
             'isi' => 'frontend/detail/v_produk'
         );
         $this->load->view('frontend/v_wrapper', $data, FALSE);

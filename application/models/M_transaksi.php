@@ -131,4 +131,28 @@ class M_transaksi extends CI_Model
         $this->db->order_by('qty', 'desc');
         return $this->db->get()->result();
     }
+
+    public function info($no_order)
+    {
+        $this->db->select('*');
+        $this->db->from('transaksi');
+        $this->db->join('pelanggan', 'transaksi.id_pelanggan = pelanggan.id_pelanggan', 'left');
+        $this->db->group_by('pelanggan.id_pelanggan');
+
+        $this->db->where('no_order', $no_order);
+        return $this->db->get()->result();
+    }
+
+    public function insert_riview()
+    {
+        $data = array(
+            'id_pelanggan' => $this->session->userdata('id_pelanggan'),
+            'id_produk' => $this->input->post('id_produk'),
+            // 'ranting' => $this->input->post('ranting'),
+            'tanggal' => date('Y-m-d'),
+            'isi' => $this->input->post('isi'),
+            'status' => 1,
+        );
+        $this->db->insert('riview', $data);
+    }
 }

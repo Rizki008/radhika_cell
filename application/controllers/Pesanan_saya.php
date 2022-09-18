@@ -124,7 +124,7 @@ class Pesanan_saya extends CI_Controller
             'title' => 'Pesanan',
             'pesanan_detail' => $this->m_transaksi->pesanan_detail($no_order),
             'info' => $this->m_transaksi->info($no_order),
-            'isi' =>  'frontend/cart/v_detail_pesanan_selesai'
+            'isi' =>  'frontend/cart/v_riview'
         );
         $this->load->view('frontend/v_wrapper', $data, FALSE);
     }
