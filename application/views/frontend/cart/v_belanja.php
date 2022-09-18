@@ -170,6 +170,7 @@
                             <td class="image">Item</td>
                             <td class="description"></td>
                             <td class="price">Price</td>
+                            <td class="price">Netto</td>
                             <td class="quantity">Quantity</td>
                             <td class="total">Total</td>
                             <td></td>
@@ -194,6 +195,9 @@
                                 </td>
                                 <td class="cart_price">
                                     <p>Rp. <?= number_format($items['price']); ?></p>
+                                </td>
+                                <td class="cart_price">
+                                    <p> <?= $berat ?> Gr</p>
                                 </td>
                                 <td class="cart_quantity">
                                     <div class="cart_quantity_button">

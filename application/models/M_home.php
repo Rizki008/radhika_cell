@@ -84,7 +84,6 @@ class M_home extends CI_Model
         $this->db->select('*');
         $this->db->from('riview');
         $this->db->join('pelanggan', 'riview.id_pelanggan = pelanggan.id_pelanggan', 'left');
-
         $this->db->where('id_produk', $id_produk);
         return $this->db->get()->result();
     }

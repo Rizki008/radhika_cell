@@ -68,6 +68,7 @@
                                 </button>
                             </span>
                             <p><b>Availability:</b> In Stock</p>
+                            <p><b>Netto:</b> <?= $produk->berat ?> Gr</p>
                             <p><b>Condition:</b> New</p>
                             <p><b>Brand:</b> <?= $produk->nama_kategori ?></p>
                             <!-- <a href=""><img src="images/product-details/share.png" class="share img-responsive" alt="" /></a> -->
@@ -83,7 +84,7 @@
                     <div class="col-sm-12">
                         <ul class="nav nav-tabs">
                             <li><a href="#details" data-toggle="tab">Details</a></li>
-                            <li class="active"><a href="#reviews" data-toggle="tab">Reviews (5)</a></li>
+                            <li class="active"><a href="#reviews" data-toggle="tab">Reviews</a></li>
                         </ul>
                     </div>
                     <div class="tab-content">
