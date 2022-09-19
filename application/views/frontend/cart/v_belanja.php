@@ -238,7 +238,7 @@
                 <p>Apakah Anda ingin memperkirakan biaya pengiriman Anda.</p>
             </div>
             <div class="row">
-                <div class="col-sm-6">
+                <!-- <div class="col-sm-6">
                     <div class="chose_area">
                         <ul class="user_info">
                             <li class="single_field">
@@ -263,7 +263,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-sm-6">
                     <div class="total_area">
                         <?php $i = 1; ?>
@@ -277,11 +277,16 @@
                             <?php $i++; ?>
                         <?php } ?>
                         <ul>
+                            <?php $keranjang = $this->cart->contents();
+                            $jml_item = 0;
+                            foreach ($keranjang as $key => $value) {
+                                $jml_item = $jml_item + $value['qty'];
+                            } ?>
                             <li>Cart Sub Total <span>Rp. <?= number_format($this->cart->total(), 0) ?></span></li>
-                            <li>Total Berat <span><?= $berat ?> GR Gr</span></li>
-                            <li>Quantity <span><?php echo $items['qty'] ?></span></li>
-                            <li>Ongkir <span id="ongkir"></span></li>
-                            <li>Total <span class="order-total" id="total_bayar"></span></li>
+                            <li>Total Berat <span><?= $berat ?> GR</span></li>
+                            <li>Quantity <span><?= $jml_item ?></span></li>
+                            <!-- <li>Ongkir <span id="ongkir"></span></li>
+                            <li>Total <span class="order-total" id="total_bayar"></span></li> -->
                         </ul>
                         <button type="submit" class="btn btn-default update">Update</button>
                         <a class="btn btn-default check_out" href="<?= base_url('belanja/cekout') ?>">Check Out</a>

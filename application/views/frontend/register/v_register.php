@@ -7,22 +7,31 @@
                     <!--login form-->
                     <h2>Login to your account</h2>
                     <?php
-                    echo validation_errors('<div class="alert alert-warning alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <h5><i class="icon fa fa-exclamation-triangle"></i> Coba Lagi</h5>', '</div>');
+                    echo validation_errors('<div class="alert alert-warning alert-success-style3 alert-st-bg2">
+                    <button type="button" class="close sucess-op" data-dismiss="alert" aria-label="Close">
+                    <span class="icon-sc-cl" aria-hidden="true">&times;</span>
+                    </button>
+                    <i class="fa fa-exclamation-triangle adminpro-warning-danger admin-check-pro admin-check-pro-clr2" aria-hidden="true"></i>
+                    <p><strong>Warning!</strong> Coba Lagi!!!</p>', '</div>');
 
                     if ($this->session->flashdata('error')) {
-                        echo '<div class="alert alert-danger alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <h5><i class="icon fa fa-ban"></i> Gagal</h5>';
+                        echo '<div class="alert alert-danger alert-mg-b alert-success-style4 alert-st-bg3">
+                      <button type="button" class="close sucess-op" data-dismiss="alert" aria-label="Close">
+          <span class="icon-sc-cl" aria-hidden="true">&times;</span>
+        </button>
+                      <i class="fa fa-times adminpro-danger-error admin-check-pro admin-check-pro-clr3" aria-hidden="true"></i>
+                      <p><strong>Danger!</strong> Gagal.</p>';
                         echo $this->session->flashdata('error');
                         echo '</div>';
                     }
 
                     if ($this->session->flashdata('pesan')) {
-                        echo '<div class="alert alert-success alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <h5><i class="icon fa fa-check"></i> Sukses</h5>';
+                        echo '<div class="alert alert-success alert-success-style1 alert-st-bg">
+                      <button type="button" class="close sucess-op" data-dismiss="alert" aria-label="Close">
+          <span class="icon-sc-cl" aria-hidden="true">&times;</span>
+        </button>
+                      <i class="fa fa-check adminpro-checked-pro admin-check-pro admin-check-pro-clr" aria-hidden="true"></i>
+                      <p><strong>Success!</strong>successful</p>';
                         echo $this->session->flashdata('pesan');
                         echo '</div>';
                     }

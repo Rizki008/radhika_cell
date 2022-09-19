@@ -225,10 +225,15 @@
                                 <?php $i++; ?>
                             <?php } ?>
                             <div class="total_area">
+                                <?php $keranjang = $this->cart->contents();
+                                $jml_item = 0;
+                                foreach ($keranjang as $key => $value) {
+                                    $jml_item = $jml_item + $value['qty'];
+                                } ?>
                                 <ul>
                                     <li>Cart Sub Total <span>Rp. <?= number_format($this->cart->total(), 0) ?></span></li>
-                                    <li>Total Berat <span><?= $berat ?> GR Gr</span></li>
-                                    <li>Quantity <span><?php echo $items['qty'] ?></span></li>
+                                    <li>Total Berat <span><?= $berat ?> GR</span></li>
+                                    <li>Quantity <span><?= $jml_item ?></span></li>
                                     <li>Ongkir <span id="ongkir"></span></li>
                                     <li>Total <span class="order-total" id="total_bayar"></span></li>
                                 </ul>

@@ -32,7 +32,7 @@ class Pelanggan_login
 
             redirect('home');
         } else {
-            $this->ci->session->set_flashdata('pesan', 'Email Atau Password Salah');
+            $this->ci->session->set_flashdata('error', 'Email Atau Password Salah');
             redirect('pelanggan/login');
         }
     }
