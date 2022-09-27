@@ -447,7 +447,7 @@
                 </script>
             </div>
             <div class="bg-white pd-20 card-box mb-30">
-                <h4 class="h4 text-blue">Analisis Jenis Kelaim</h4>
+                <h4 class="h4 text-blue">Analisis Jenis Kelamin</h4>
                 <!-- <div id="chart1"></div> -->
                 <?php
                 foreach ($grafik_jenis_kel as $key => $value) {
