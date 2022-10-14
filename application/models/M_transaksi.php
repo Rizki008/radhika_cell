@@ -9,6 +9,10 @@ class M_transaksi extends CI_Model
         $this->db->insert('transaksi', $data);
         $this->db->join('lokasi', 'transaksi.id_lokasi = table.id_lokasi', 'left');
     }
+    public function transaksi($data)
+    {
+        $this->db->insert('transaksi', $data);
+    }
 
     public function simpan_rinci_transaksi($data_rinci)
     {
@@ -168,5 +172,26 @@ class M_transaksi extends CI_Model
             'status' => 1,
         );
         $this->db->insert('riview', $data);
+    }
+
+    //transaksi langsung
+    public function produk()
+    {
+        return $this->db->query("SELECT * FROM `produk` JOIN diskon ON produk.id_produk = diskon.id_produk WHERE produk.id_produk")->result();
+    }
+
+    //transaksi langsung
+    public function transaksi_langsung()
+    {
+        $data['pesanan'] = $this->db->query("SELECT * FROM transaksi JOIN user ON transaksi.id_user = user.id_user WHERE type_order='2' AND status_order='0'")->result();
+        $data['selesai'] = $this->db->query("SELECT * FROM transaksi JOIN user ON transaksi.id_user = user.id_user WHERE type_order='2' AND status_order='4'")->result();
+        return $data;
+    }
+
+    public function detail_transaksi_langsung($no_order)
+    {
+        $data['pesanan'] = $this->db->query("SELECT * FROM rinci_transaksi JOIN transaksi ON rinci_transaksi.no_order=transaksi.no_order JOIN produk ON rinci_transaksi.id_produk=produk.id_produk JOIN diskon ON produk.id_produk=diskon.id_produk WHERE transaksi.no_order='" . $no_order . "';")->result();
+        $data['transaksi'] = $this->db->query("SELECT * FROM `transaksi` JOIN pelanggan ON pelanggan.id_pelanggan=transaksi.id_pelanggan WHERE transaksi.no_order='" . $no_order . "';")->row();
+        return $data;
     }
 }
