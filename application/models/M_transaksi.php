@@ -116,9 +116,25 @@ class M_transaksi extends CI_Model
         //$this->db->select('rinci_transaksi.qty');
         $this->db->from('rinci_transaksi');
         $this->db->join('produk', 'rinci_transaksi.id_produk = produk.id_produk', 'left');
+        $this->db->join('transaksi', 'rinci_transaksi.no_order = transaksi.no_order', 'left');
+        $this->db->where('type_order=1');
         $this->db->group_by('rinci_transaksi.id_produk');
         $this->db->order_by('qty', 'desc');
         return $this->db->get()->result();
+    }
+
+    public function grafik_langsung()
+    {
+        // $this->db->select_sum('qty');
+        // $this->db->select('produk.nama_produk');
+        // //$this->db->select('rinci_transaksi.qty');
+        // $this->db->from('rinci_transaksi');
+        // $this->db->join('produk', 'rinci_transaksi.id_produk = produk.id_produk', 'left');
+        // $this->db->where('type_order=2');
+        // $this->db->group_by('rinci_transaksi.id_produk');
+        // $this->db->order_by('qty', 'desc');
+        // return $this->db->get()->result();
+        return $this->db->query("SELECT SUM(qty) AS jumlah, produk.nama_produk FROM `rinci_transaksi` JOIN produk ON rinci_transaksi.id_produk=produk.id_produk JOIN transaksi ON rinci_transaksi.no_order=transaksi.no_order WHERE type_order='2' GROUP BY rinci_transaksi.id_produk ORDER BY qty;")->result();
     }
 
     public function grafik_pelanggan()

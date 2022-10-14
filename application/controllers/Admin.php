@@ -18,6 +18,7 @@ class Admin extends CI_Controller
         $data = array(
             'title' => 'Dashboard',
             'grafik' => $this->m_transaksi->grafik(),
+            'grafik_langsung' => $this->m_transaksi->grafik_langsung(),
             'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
             'grafik_jenis_kel' => $this->m_transaksi->grafik_jenis_kel(),
             'isi' => 'v_admin'

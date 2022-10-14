@@ -112,6 +112,7 @@ class Belanja extends CI_Controller
                 'total_bayar' => $this->input->post('total_bayar'),
                 'status_bayar' => '0',
                 'status_order' => '0',
+                'type_order' => '1',
                 'catatan' => $this->input->post('catatan'),
             );
             $this->m_transaksi->simpan_transaksi($data);
