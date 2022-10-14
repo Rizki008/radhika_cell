@@ -16,10 +16,12 @@ class User_login
     {
         $cek = $this->ci->m_auth->user_login($username, $password);
         if ($cek) {
+            $id_user = $cek->id_user;
             $username = $cek->username;
             $password = $cek->password;
             $level = $cek->level;
 
+            $this->ci->session->set_userdata('id_user', $id_user);
             $this->ci->session->set_userdata('username', $username);
             $this->ci->session->set_userdata('password', $password);
             $this->ci->session->set_userdata('level', $level);
