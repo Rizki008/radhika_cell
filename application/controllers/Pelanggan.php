@@ -26,6 +26,8 @@ class Pelanggan extends CI_Controller
         ));
         $this->form_validation->set_rules('no_tlpn', 'No Telpon ', 'required', array('required' => '%s Mohon Untuk di isi'));
         $this->form_validation->set_rules('jenis_kel', 'Jenis Kelamin ', 'required', array('required' => '%s Mohon Untuk di isi'));
+        $this->form_validation->set_rules('kode_pos', 'Kode Post ', 'required', array('required' => '%s Mohon Untuk di isi'));
+        $this->form_validation->set_rules('alamat', 'Alamat', 'required', array('required' => '%s Mohon Untuk di isi'));
 
 
         if ($this->form_validation->run() == FALSE) {
@@ -41,6 +43,8 @@ class Pelanggan extends CI_Controller
                 'password' => $this->input->post('password'),
                 'no_tlpn' => $this->input->post('no_tlpn'),
                 'jenis_kel' => $this->input->post('jenis_kel'),
+                'kode_pos' => $this->input->post('kode_pos'),
+                'alamat' => $this->input->post('alamat'),
             );
             $this->m_pelanggan->register($data);
             $this->session->set_flashdata('pesan', 'Registrasi Berhasil, Silahkan Untuk Login');

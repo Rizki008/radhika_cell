@@ -72,6 +72,8 @@
                     <input type="email" name="email" value="<?= set_value('email') ?>" placeholder="Email Address" required />
                     <input type="password" name="password" value="<?= set_value('password') ?>" placeholder="Password" required />
                     <input type="password" name="ulangi_password" value="<?= set_value('ulangi_password') ?>" placeholder="Ulangi Password" required />
+                    <input type="text" name="alamat" value="<?= set_value('alamat') ?>" placeholder="Alamat Lengkap" required />
+                    <input type="number" name="kode_pos" value="<?= set_value('kode_pos') ?>" placeholder="Kode Post" required />
                     <button type="submit" class="btn btn-default">Signup</button>
                     <?php echo form_close() ?>
                 </div>
