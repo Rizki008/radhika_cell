@@ -188,10 +188,10 @@
                         <div class="shopper-info">
                             <p>Shopper Information</p>
                             <!-- <form> -->
-                            <input type="text" name="nama_pelanggan" placeholder="Nama Penerima" class="form-control"><br>
-                            <input type="text" name="no_tlpn" placeholder="No Telphone" class="form-control"><br>
-                            <input type="text" name="kode_pos" placeholder="Kode Post" class="form-control"><br>
-                            <input type="text" name="alamat" placeholder="Alamat lengkap" class="form-control">
+                            <input type="text" name="nama_pelanggan" value="<?= $this->session->userdata('username'); ?>" placeholder="Nama Penerima" class="form-control"><br>
+                            <input type="text" name="no_tlpn" value="<?= $this->session->userdata('no_tlpn'); ?>" placeholder="No Telphone" class="form-control"><br>
+                            <input type="text" name="kode_pos" value="<?= $this->session->userdata('kode_pos'); ?>" placeholder="Kode Pos" class="form-control"><br>
+                            <input type="text" name="alamat" value="<?= $this->session->userdata('alamat'); ?>" placeholder="Alamat lengkap" class="form-control">
                             <!-- </form> -->
                             <a class="btn btn-primary" href="<?= base_url('belanja') ?>">Back</a>
                             <button type="submit" class="btn btn-default update">Cekout</button>
