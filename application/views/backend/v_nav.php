@@ -36,6 +36,11 @@
                     </ul>
                 </li>
                 <li class="dropdown">
+                    <a href="<?= base_url('transaksi_langsung') ?>" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-apartment"></span><span class="mtext"> Transaksi Langsung </span>
+                    </a>
+                </li>
+                <li class="dropdown">
                     <a href="<?= base_url('admin/lokasi') ?>" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-apartment"></span><span class="mtext"> Lokasi </span>
                     </a>
